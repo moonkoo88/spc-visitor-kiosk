@@ -1,0 +1,85 @@
+{
+     "name": "spc-visitor-kiosk",
+     "productName": "SPC Visitor KIOSK",
+     "description": "SPC 방문자관리 KIOSK 프로그램",
+     "version": "0.0.1",
+     "author": "SPC Networks",
+     "copyright": "© 2020, SPC Networks inc.",
+     "homepage": "http://spc.co.kr",
+     "private": true,
+     "main": "main.js",
+     "build": {
+          "appId": "kr.co.spc.visitor",
+          "asar": true,
+          "protocols": {
+               "name": "productTest",
+               "schemes": [
+                    "productTest"
+               ]
+          },
+          "mac": {
+               "target": [
+                    "default"
+               ],
+               "icon": "icon.ico"
+          },
+          "dmg": {
+               "title": "tournant",
+               "icon": "icon.ico"
+          },
+          "win": {
+               "target": [
+                    "zip",
+                    "nsis"
+               ],
+               "icon": "icon.ico"
+          },
+          "linux": {
+               "target": [
+                    "AppImage",
+                    "deb",
+                    "rpm",
+                    "zip",
+                    "tar.gz"
+               ],
+               "icon": "icon.ico"
+          },
+          "nsis": {
+               "oneClick": false,
+               "allowToChangeInstallationDirectory": false,
+               "installerLanguages": [
+                    "en_US",
+                    "ko_KR"
+               ],
+               "language": "1042"
+          },
+          "directories": {
+               "buildResources": "resources/installer/",
+               "output": "build/",
+               "app": "."
+          }
+     },
+     "scripts": {
+          "start": "electron .",
+          "build:osx": "electron-builder --mac",
+          "build:linux": "npm run build:linux32 && npm run build:linux64",
+          "build:linux32": "electron-builder --linux --ia32",
+          "build:linux64": "electron-builder --linux --x64",
+          "build:win": "npm run build:win32 && npm run build:win64",
+          "build:win32": "electron-builder --win --ia32",
+          "build:win64": "electron-builder --win --x64"
+     },
+     "repository": "https://github.com/electron/electron-quick-start",
+     "keywords": [
+          "Electron",
+          "quick",
+          "start",
+          "tutorial",
+          "demo"
+     ],
+     "license": "CC0-1.0",
+     "devDependencies": {
+          "electron": "^8.0.1",
+          "electron-builder": "^22.3.2"
+     }
+}
