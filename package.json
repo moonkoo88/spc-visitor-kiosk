@@ -5,7 +5,6 @@
      "version": "0.0.1",
      "author": "SPC Networks",
      "copyright": "© 2020, SPC Networks inc.",
-     "homepage": "http://spc.co.kr",
      "private": true,
      "main": "main.js",
      "build": {
@@ -70,14 +69,8 @@
           "build:win64": "electron-builder --win --x64"
      },
      "repository": "https://github.com/electron/electron-quick-start",
-     "keywords": [
-          "Electron",
-          "quick",
-          "start",
-          "tutorial",
-          "demo"
-     ],
-     "license": "CC0-1.0",
+     "keywords": [],
+     "license": "UNLICENSED",
      "devDependencies": {
           "electron": "^8.0.1",
           "electron-builder": "^22.3.2"
